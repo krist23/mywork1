@@ -1,0 +1,26 @@
+django-admin startproject myproject
+cd myproject
+python manage.py startapp mysuccess
+python manage.py makemigrations
+python manage.py migrate
+python manage.py createsuperuser
+python manage.py runserver
+------------------------------------------------------------------
+python manage.py shell
+from company.models import Mark
+a.save()    a = Mark(Student =2, mark = 4, index = 3, subj = 1)
+mark.student_set.create(2)(mark=5, index = 3, subj = 1)
+
+------------------------------------------------------
+не забыть вставить в settings после создания папки  'templates'
+PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
+
+PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
+
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [
+            os.path.join(PROJECT_ROOT, 'templates')
+        ],
+=================================================

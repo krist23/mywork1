@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}Вход{% endblock %}
+
+{% block nav %}
+<span class="navbar-text">Авторизация</span>
+{% endblock %}
+
+{% block body %}
+<p />
+{% if messages %}
+<ul>
+  {% for message in messages %}
+  <div class="alert alert-danger" role="alert">
+    {{ message }}
+  </div>
+  {% endfor %}
+</ul>
+{% endif %}
+<p />
+<form style="margin-left: 15px;margin-right: 10px;" class="form-inline" method="POST">
+  {% csrf_token %}
+  <div class="form-group mb-2">
+    <input class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" type="text" name="name" value="{{ username }}" placeholder="Введите имя">
+  </div>
+  <div class="form-group mx-sm-3 mb-2">
+    <input type="password" class="form-control" id="inputPassword2" placeholder="Введите пароль" name="password">
+  </div>
+  <input type="submit" class="btn btn-primary mb-2" value="Вход">
+</form>
+<a href="/register">Регистрация</a>
+{% endblock %}

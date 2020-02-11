@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}Главная {{ user }}{% endblock %}
+
+{% block nav %}
+<a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Вы вошли, как {{ user }} ({{ username }})</a>
+<a class="btn btn-outline-success my-2 my-sm-0" href="/logout">Выйти</a>
+{% endblock %}
+
+{% block body %}
+<p />
+<a href='addmark/'>
+  <p>Добавить оценку</p>
+</a>
+<p />
+<h3>Мои оценки</h3>
+{% for m in marks %}
+<p>Оценка {{ m.value }}, предмет {{ m.subject }}, дата добавления {{ m.date }} {{ m.description }}</p>
+{% endfor %}
+{% endblock %}

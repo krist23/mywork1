@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title %}Регистрация{% endblock %}
+
+{% block nav %}
+<span class="navbar-text">Регистрация</span>
+{% endblock %}
+
+{% block body %}
+<p />
+{% if messages %}
+<ul>
+  {% for message in messages %}
+  <div class="alert alert-danger" role="alert">
+    {{ message }}
+  </div>
+  {% endfor %}
+</ul>
+{% endif %}
+<p />
+<form method="POST">
+  {% csrf_token %}
+  <div class="form-group" method="POST">
+    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="nameHelp" placeholder="Имя" name="username">
+  </div>
+  <div>
+  <input type="email" class="form-control" id="exampleInputEmail1" placeholder="E-mail" name="mail">
+  <p />
+  </div>
+  <input type="password" class="form-control" id="exampleInputEmail1" placeholder="Пароль" name="password1">
+  <p />
+  <div>
+  <input type="password" class="form-control" placeholder="Подтверлите пароль" name="password2">
+  </div>
+  <p />
+  <div>
+  <input type="submit" class="btn btn-primary mb-2" value="Регистрация">
+  </div>
+
+</form>
+<p></p>
+<p><a href="/login">Вход</a></p>
+{% endblock %}
